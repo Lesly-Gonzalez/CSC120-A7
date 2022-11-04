@@ -10,6 +10,16 @@ public class Cafe extends Building{
     private int nCreams; // The number of "splashes" of cream remaining in inventory
     private int nCups; // The number of cups remaining in inventory
 
+
+    /* Overloaded constructor with name, address */
+    public Cafe(String name, String address) {
+        super(name, address, 1); // Call full constructor with hard-coded # floors
+        this.nCoffeeOunces = 100;
+        this.nSugarPackets = 20;
+        this.nCreams = 10;
+        this.nCups = 120;
+    }
+
     /** Class constructor
     * @param Cafe's name, address and number of floors
     */
@@ -38,6 +48,21 @@ public class Cafe extends Building{
         restock(size, sugar, cream, this.nCups);
 
         System.out.println("Here is your order of one cup of coffee with "
+        + size + " ounces of expresso, " + sugar + " packets of sugar and " +
+        cream + " packets of cream. Enjoy!");
+    }
+
+    /* Overloaded sellCoffee method to include number of cups */
+    //public void sellCoffee(int size, int nSugarPackets, int nCreams); 
+    public void sellCoffee(int size, int sugar, int cream, int cups) {
+        this.nCoffeeOunces = this.nCoffeeOunces - size;
+        this.nSugarPackets = this.nSugarPackets - sugar;
+        this.nCreams = this.nCreams - cream;
+        this.nCups = this.nCups - cups;
+
+        restock(size, sugar, cream, this.nCups);
+
+        System.out.println("Here is your order of " + cups + " cups of coffee with "
         + size + " ounces of expresso, " + sugar + " packets of sugar and " +
         cream + " packets of cream. Enjoy!");
     }
@@ -74,6 +99,9 @@ public class Cafe extends Building{
         Compass.sellCoffee(10, 5, 3);
         Compass.sellCoffee(15, 7, 10);
         Compass.sellCoffee(20, 20, 8);
+
+        Compass.sellCoffee(15, 7, 4, 3);
+        
 
     }
     

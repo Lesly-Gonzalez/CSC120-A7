@@ -7,13 +7,25 @@ import java.util.Enumeration;
 public class Library extends Building{
 
     private Hashtable<String, Boolean> collection;
+    private boolean hasElevator;
+
+    /* Overloaded constructor with name, address */
+    public Library(String name, String address) {
+      super(name, address, 1); // Call full constructor with hard-coded # floors
+    }
+
+    /* Overloaded constructor with name, address, number of floors */
+    public Library(String name, String address, int nFloors) {
+      super(name, address, nFloors); // Call full constructor with hard-coded # floors
+    }
 
     /** Class constructor
     * @param Library's name, address and number of floors
     */
-    public Library(String name, String address, int nFloors) {
+    public Library(String name, String address, int nFloors, boolean hElevator) {
       super(name, address, nFloors);
       this.collection = new Hashtable<String, Boolean>();
+      this.hasElevator = hElevator;
 
       System.out.println("You have built a library: 📖");
     }
@@ -100,9 +112,35 @@ public class Library extends Building{
     }
   }
 
+
+    /** Method that ...
+   * @param Floor number
+   */
+    public void goToFloor(int floorNum) {
+      
+      if (hasElevator == true && floorNum <= nFloors){
+        System.out.println("You are now on floor #" + floorNum + " of " + this.name);
+      } else if (hasElevator == true && floorNum > nFloors) {
+        System.out.println("You want to go to floor # " + floorNum + " but " + this.name + " only has " + this.nFloors + " floors. Please select one of those floors");
+      }
+      else{
+        System.out.println("There is no elevator in this library.");
+      }
+    }
+
+    /** Method that shows us the action options for the house building
+   * @param None
+   */
+    public void showOptions() {
+      System.out.println("Available options at " + this.name + ":\n + addTitle(title) \n + removeTitle(title) \n + checkOut(title) \n + returnBook(title) \n + containsTitle(title) \n + isAvailable(title) \n + printCollection() \n + goToFloor(floorNum)");
+    }
+
     public static void main(String[] args) {
-     Library Neilson = new Library("Neilson", "Smith College", 5);
+     Library Neilson = new Library("Neilson", "Smith College", 5, true);
      System.out.println(Neilson);
+     Neilson.showOptions();
+     Neilson.goToFloor(6);
+
      Neilson.addTitle("Don Quixote");
      Neilson.addTitle("La Odisea");
      Neilson.addTitle("Azul");
