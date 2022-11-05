@@ -11,7 +11,9 @@ public class Cafe extends Building{
     private int nCups; // The number of cups remaining in inventory
 
 
-    /* Overloaded constructor with name, address */
+    /** Overloaded constructor 
+    *@param  name, address 
+    */
     public Cafe(String name, String address) {
         super(name, address, 1); // Call full constructor with hard-coded # floors
         this.nCoffeeOunces = 100;
@@ -35,11 +37,11 @@ public class Cafe extends Building{
 
     
     /** Sell a cup of coffee!!
-    * @param size of order (ounces), number of sugar packets, amount of cream, number of cups
+    * @param size of order (ounces), number of sugar packets, amount of cream
     */
 
     //public void sellCoffee(int size, int nSugarPackets, int nCreams); Am I allowed to change this?
-    public void sellCoffee(int size, int sugar, int cream) { //change it: delete cup, and have the exact name for the method call
+    public void sellCoffee(int size, int sugar, int cream) { 
         this.nCoffeeOunces = this.nCoffeeOunces - size;
         this.nSugarPackets = this.nSugarPackets - sugar;
         this.nCreams = this.nCreams - cream;
@@ -52,8 +54,10 @@ public class Cafe extends Building{
         cream + " packets of cream. Enjoy!");
     }
 
-    /* Overloaded sellCoffee method to include number of cups */
-    //public void sellCoffee(int size, int nSugarPackets, int nCreams); 
+    /** Overloaded sellCoffee method to include number of cups \
+    * @param size of order (ounces), number of sugar packets, amount of cream, number of cups
+    */
+    
     public void sellCoffee(int size, int sugar, int cream, int cups) {
         this.nCoffeeOunces = this.nCoffeeOunces - size;
         this.nSugarPackets = this.nSugarPackets - sugar;
@@ -101,8 +105,8 @@ public class Cafe extends Building{
         Compass.sellCoffee(20, 20, 8);
 
         Compass.sellCoffee(15, 7, 4, 3);
-        
 
-    }
+
+    } 
     
 }

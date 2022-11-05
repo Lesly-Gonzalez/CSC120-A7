@@ -14,12 +14,16 @@ public class House extends Building{
 
 
 
-/* Overloaded constructor with name, address */
+/** Overloaded constructor 
+*@param  name, address 
+*/
 public House(String name, String address) {
   super(name, address, 1); // Call full constructor with hard-coded # floors
 }
 
-/* Overloaded constructor with name, address, number of floors */
+/** Overloaded constructor 
+*@param name, address, number of floors 
+*/
 public House(String name, String address, int nFloors) {
   super(name, address, nFloors); // Call full constructor with hard-coded # floors
 }

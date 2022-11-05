@@ -74,8 +74,8 @@ public class Building {
         System.out.println("You are now on floor #" + floorNum + " of " + this.name);
         this.activeFloor = floorNum;
     }
-
-    public void goUp() {
+   
+    public void goUp() { 
         this.goToFloor(this.activeFloor + 1);
     }
 

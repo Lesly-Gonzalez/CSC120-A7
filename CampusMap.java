@@ -28,7 +28,7 @@ public class CampusMap {
         System.out.println("Removing building...");
         buildings.remove(b);
         System.out.println("-->Successfully removed " + b.getName() + " to the map.");
-        return b;
+        return b; 
     }
 
     public String toString() {
