@@ -77,12 +77,6 @@ public House(String name, String address, int nFloors) {
     return name; 
   }
 
-// /** Method to tells us how many students have moved out of the house
-//  * @param number of people who moved out of the house
-//  */
-//   public void moveOut(int number) {
-//     System.out.println(number + " students have moved out of the house");
-//   }
 
 /** Method that tells us whether or not a given person is a resident of the `House`
  * @param Name of the person 
@@ -93,7 +87,7 @@ public House(String name, String address, int nFloors) {
   }
 
 
-/** Method that ...
+/** Method that takes you to a certain floor in the house
  * @param Floor number
  */
   public void goToFloor(int floorNum) {

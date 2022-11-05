@@ -113,7 +113,7 @@ public class Library extends Building{
   }
 
 
-    /** Method that ...
+    /** Method that takes you to a certain floor in the house
    * @param Floor number
    */
     public void goToFloor(int floorNum) {
